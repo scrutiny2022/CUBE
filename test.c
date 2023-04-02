@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include <wiringPi.h>
 
 #define dir_pin 0
@@ -56,7 +57,7 @@ double period_determine(int t)
 {
 	//uses the variable i (from the for loop in rotate function) to change every time's delay
 	double period_ = 0;
-	period_ = e ^ (0.02 * period * t);
+	period_ = pow(e, 0.02 * period * t); //e ^ (0.02 * period * t);
 	return period_;
 }
 
